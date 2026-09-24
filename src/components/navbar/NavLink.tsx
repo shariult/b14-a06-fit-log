@@ -19,9 +19,10 @@ function NavLink(props: NavLinkProps) {
     classes = `${classes} ${className}`;
   }
 
-  if (urlPath === "/" && href === "/workouts") {
-    classes = `${classes} text-pr bg-pd`;
-  } else if (urlPath.startsWith(href.toString())) {
+  if (
+    (href === "/" && urlPath === href) ||
+    (href !== "/" && urlPath.startsWith(href.toString()))
+  ) {
     classes = `${classes} text-pr bg-pd`;
   }
 

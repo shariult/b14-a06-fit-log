@@ -43,7 +43,7 @@ function NavList(props: NavListProps) {
       <ul
         className={`list-none gap-2 w-full md:w-[initial] flex flex-col md:flex-row items-end px-6 py-4 md:p-0 bg-gray-900 md:bg-transparent absolute md:static top-full right-0 origin-top transition ${navListClasses}`}
       >
-        <NavLink href="/workouts">Workouts</NavLink>
+        <NavLink href="/">Workouts</NavLink>
         <NavLink href="/my-plan">My Plan</NavLink>
       </ul>
     </div>
