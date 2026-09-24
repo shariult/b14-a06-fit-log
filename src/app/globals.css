@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@theme {
+  --color-pr: #c2f800;
+  --color-pd: #1a2312;
+
+  --font-inter: "Inter", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
+}
+
+@layer components {
+  .container-center {
+    @apply container mx-auto px-6;
+  }
+}

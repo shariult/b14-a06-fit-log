@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Oswald, Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar/Navbar";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -18,7 +19,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${oswald.className} ${inter.className}`}>
-      <body>{children}</body>
+      <body className="bg-gray-950 text-gray-50">
+        <Navbar />
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
