@@ -1,35 +1,41 @@
+import { Workout } from "@/types";
 import React from "react";
+type WorkoutSpecificationsProps = {
+  workout: Workout;
+};
 
-function WorkoutSpecifications() {
+function WorkoutSpecifications(props: WorkoutSpecificationsProps) {
   return (
     <ul className="flex flex-col bg-gray-800 rounded-2xl">
       <li className="specification-item">
         <span className="specification-label">Equipment</span>
-        <span className="text-gray-200">Burbell, Bench</span>
+        <span className="text-gray-200">{props.workout.equipment}</span>
       </li>
       <li className="specification-item">
         <span className="specification-label">Difficulty</span>
-        <span className="text-gray-200">Beginner</span>
+        <span className="text-gray-200">{props.workout.difficulty}</span>
       </li>
       <li className="specification-item">
         <span className="specification-label">Sets</span>
-        <span className="text-gray-200">4</span>
+        <span className="text-gray-200">{props.workout.sets}</span>
       </li>
       <li className="specification-item">
         <span className="specification-label">Reps</span>
-        <span className="text-gray-200">6-8</span>
+        <span className="text-gray-200">{props.workout.reps}</span>
       </li>
       <li className="specification-item">
         <span className="specification-label">Duration</span>
-        <span className="text-gray-200">25 min</span>
+        <span className="text-gray-200">{props.workout.duration} min</span>
       </li>
       <li className="specification-item">
         <span className="specification-label">Calories</span>
-        <span className="text-gray-200">180 kcal</span>
+        <span className="text-gray-200">
+          {props.workout.caloriesBurned} kcal
+        </span>
       </li>
       <li className="specification-item">
         <span className="specification-label">Rating</span>
-        <span className="text-gray-200">4.9</span>
+        <span className="text-gray-200">{props.workout.rating}</span>
       </li>
     </ul>
   );

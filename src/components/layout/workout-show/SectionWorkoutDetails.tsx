@@ -6,16 +6,21 @@ import WorkoutSpecifications from "@/components/workouts/WorkoutSpecifications";
 import Button from "@/components/ui/Button";
 import { IconBookmark } from "@/components/ui/Icons";
 import { IconCalendar } from "@/components/ui/Icons";
+import { Workout } from "@/types";
 
-function SectionWorkoutDetails() {
+type SectionWorkoutDetailsProps = {
+  workout: Workout;
+};
+
+function SectionWorkoutDetails(props: SectionWorkoutDetailsProps) {
   return (
     <section>
       <div className="container-center py-12 grid grid-cols-1 lg:grid-cols-2 gap-8 mb:gap-14">
         {/* left */}
         <div className="overflow-hidden">
           <Image
-            src="https://img.magnific.com/free-photo/portrait-anime-character-doing-fitness-exercising_23-2151666664.jpg?w=740"
-            alt="person working out"
+            src={props.workout.image}
+            alt={props.workout.name}
             width={588}
             height={773}
             className="w-full rounded-2xl"
@@ -25,21 +30,19 @@ function SectionWorkoutDetails() {
         {/* right */}
         <div className="flex flex-col gap-6">
           <div>
-            <h2 className="heading-2">BARBELL BENCH PRESS</h2>
-            <p className="helper-text">
-              A compound press that builds chest thickness, triceps, and
-              pressing power from a stable bench.
-            </p>
+            <h2 className="heading-2">{props.workout.name}</h2>
+            <p className="helper-text">{props.workout.description}</p>
           </div>
 
           <div className="flex gap-4">
-            <Tag>Chest</Tag>
-            <Tag>Arms</Tag>
+            {props.workout.muscleGroups.map((item, idx) => (
+              <Tag key={idx}>{item}</Tag>
+            ))}
           </div>
 
-          <WorkoutSpecifications />
+          <WorkoutSpecifications workout={props.workout} />
 
-          <WorkoutInstructionsList />
+          <WorkoutInstructionsList workout={props.workout} />
 
           {/* action */}
           <div className="flex flex-wrap gap-4">

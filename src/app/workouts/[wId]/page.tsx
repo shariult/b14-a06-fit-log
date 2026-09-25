@@ -1,5 +1,7 @@
 import React from "react";
 import SectionWorkoutDetails from "@/components/layout/workout-show/SectionWorkoutDetails";
+import { getWorkout } from "@/lib/actions";
+import { notFound } from "next/navigation";
 
 type WorkoutShowProps = {
   children: React.ReactNode;
@@ -8,11 +10,13 @@ type WorkoutShowProps = {
 
 async function WorkoutShow(props: WorkoutShowProps) {
   const { wId } = await props.params;
-  console.log(wId);
+
+  const workout = await getWorkout(wId);
 
   return (
     <>
-      <SectionWorkoutDetails />
+      {workout && <SectionWorkoutDetails workout={workout} />}
+      {!workout && notFound()}
     </>
   );
 }
