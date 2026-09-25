@@ -23,11 +23,9 @@ function Navbar() {
         <NavList className="order-2 md:order-1" />
 
         {/* NavStats */}
-        <div className="flex gap-4 items-center order-1 md:order-2">
-          <NavStat stat={0} isActive>
-            Plan
-          </NavStat>
-          <NavStat stat={1}>Saved</NavStat>
+        <div className="flex items-center order-1 md:order-2">
+          <NavStat href="/my-plan" label="plan" isActive />
+          <NavStat href="/my-plan" label="saved" />
         </div>
 
         {/* Hamburger */}

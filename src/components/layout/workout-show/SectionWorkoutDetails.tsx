@@ -1,12 +1,11 @@
 import React from "react";
 import Image from "next/image";
+import { Workout } from "@/types";
+
 import Tag from "@/components/ui/Tag";
 import WorkoutInstructionsList from "@/components/workouts/WorkoutInstructionsList";
 import WorkoutSpecifications from "@/components/workouts/WorkoutSpecifications";
-import Button from "@/components/ui/Button";
-import { IconBookmark } from "@/components/ui/Icons";
-import { IconCalendar } from "@/components/ui/Icons";
-import { Workout } from "@/types";
+import WorkoutDetailAction from "@/components/workouts/WorkoutDetailAction";
 
 type SectionWorkoutDetailsProps = {
   workout: Workout;
@@ -45,20 +44,7 @@ function SectionWorkoutDetails(props: SectionWorkoutDetailsProps) {
           <WorkoutInstructionsList workout={props.workout} />
 
           {/* action */}
-          <div className="flex flex-wrap gap-4">
-            <Button el="btn" variant="primary">
-              <div className="flex justify-center items-center gap-2">
-                <IconCalendar />
-                <span className="text-sm">Add to today&apos;s plan</span>
-              </div>
-            </Button>
-            <Button el="btn" variant="border">
-              <div className="flex justify-center items-center gap-2">
-                <IconBookmark />
-                <span className="text-sm">Save for later</span>
-              </div>
-            </Button>
-          </div>
+          <WorkoutDetailAction workout={props.workout} />
         </div>
       </div>
     </section>

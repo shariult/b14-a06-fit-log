@@ -10,7 +10,6 @@ type WorkoutShowProps = {
 
 async function WorkoutShow(props: WorkoutShowProps) {
   const { wId } = await props.params;
-
   const workout = await getWorkout(wId);
 
   return (

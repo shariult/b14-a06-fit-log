@@ -1,30 +1,33 @@
-import React, { ComponentPropsWithoutRef } from "react";
+"use client";
+
+import React, { useContext } from "react";
+import Link, { LinkProps } from "next/link";
+import { WorkoutContext } from "@/context/WorkoutContext";
+
 type NavStatProps = {
-  stat: number;
-  children: React.ReactNode;
+  label: "plan" | "saved";
   isActive?: boolean;
   className?: string;
-} & ComponentPropsWithoutRef<"div">;
+} & LinkProps;
 
 function NavStat(props: NavStatProps) {
-  const {
-    stat = 0,
-    isActive = false,
-    className,
-    children,
-    ...otherProps
-  } = props;
-  let classes = `text-xs ${isActive ? "text-gray-300" : "text-gray-400"} flex gap-2 items-center ${className}`;
+  const { href, label, isActive = false, className, ...otherProps } = props;
+  let classes = `text-xs ${isActive ? "text-gray-300" : "text-gray-400"} flex gap-2 items-center hover:bg-gray-900/80 px-4 py-2 rounded ${className}`;
+
+  const workoutData = useContext(WorkoutContext);
+
+  const stat =
+    label === "plan" ? workoutData.plans.length : workoutData.saved.length;
 
   return (
-    <div className={classes} {...otherProps}>
-      <span>{children}</span>
+    <Link href={href} className={classes} {...otherProps}>
+      <span className="capitalize">{label}</span>
       <span
         className={`w-6 h-6 flex justify-center items-center rounded-full border border-gray-800 text-xs ${isActive ? "bg-pr text-pd border-0" : ""}`}
       >
         {stat}
       </span>
-    </div>
+    </Link>
   );
 }
 
