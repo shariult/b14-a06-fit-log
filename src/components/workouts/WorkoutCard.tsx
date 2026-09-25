@@ -5,9 +5,9 @@ import Link from "next/link";
 import Tag from "@/components/ui/Tag";
 import TextWithIcon from "@/components/ui/TextWithIcon";
 
-import IconClock from "@/components/icons/IconClock";
-import IconCalorie from "@/components/icons/IconCalorie";
-import IconRating from "@/components/icons/IconRating";
+import { IconClock } from "@/components/ui/Icons";
+import { IconCalorie } from "@/components/ui/Icons";
+import { IconRating } from "@/components/ui/Icons";
 import { type Workout } from "@/types";
 
 type WorkoutCardProps = {

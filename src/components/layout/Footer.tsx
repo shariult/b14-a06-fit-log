@@ -1,5 +1,5 @@
 import React from "react";
-import IconFooterLogo from "@/components/icons/IconFooterLogo";
+import { IconFooterLogo } from "@/components/ui/Icons";
 
 function Footer() {
   return (

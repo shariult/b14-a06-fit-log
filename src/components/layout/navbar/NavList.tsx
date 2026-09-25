@@ -2,7 +2,7 @@
 
 import React, { ComponentPropsWithoutRef, useState } from "react";
 import NavLink from "@/components/layout/navbar/NavLink";
-import IconMenu from "@/components/icons/IconMenu";
+import { IconMenu } from "@/components/ui/Icons";
 
 type NavListProps = {
   className?: string;

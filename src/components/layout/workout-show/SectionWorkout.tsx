@@ -4,8 +4,8 @@ import Tag from "@/components/ui/Tag";
 import WorkoutInstructionsList from "@/components/workouts/WorkoutInstructionsList";
 import WorkoutSpecifications from "@/components/workouts/WorkoutSpecifications";
 import Button from "@/components/ui/Button";
-import IconBookmark from "@/components/icons/IconBookmark";
-import IconCalendar from "@/components/icons/IconCalendar";
+import { IconBookmark } from "@/components/ui/Icons";
+import { IconCalendar } from "@/components/ui/Icons";
 
 function SectionWorkoutDetails() {
   return (
