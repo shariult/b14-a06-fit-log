@@ -1,13 +1,15 @@
 import WorkoutCard from "@/components/workouts/WorkoutCard";
+import { getWorkouts } from "@/lib/actions";
 import React, { ComponentPropsWithoutRef } from "react";
 
 type SectionWorkoutProps = {
   className?: string;
 } & ComponentPropsWithoutRef<"section">;
 
-function SectionWorkout(props: SectionWorkoutProps) {
+async function SectionWorkout(props: SectionWorkoutProps) {
   const { className, ...otherProps } = props;
 
+  const workoutArr = await getWorkouts();
   return (
     <section {...otherProps}>
       <div className={`container-center ${className}`}>
@@ -19,10 +21,9 @@ function SectionWorkout(props: SectionWorkoutProps) {
 
         {/* workout-grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* <WorkoutCard />
-          <WorkoutCard />
-          <WorkoutCard />
-          <WorkoutCard /> */}
+          {workoutArr.map((workoutItem) => (
+            <WorkoutCard key={workoutItem.id} workout={workoutItem} />
+          ))}
         </div>
       </div>
     </section>

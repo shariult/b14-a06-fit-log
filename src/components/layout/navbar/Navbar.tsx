@@ -7,7 +7,7 @@ import NavList from "./NavList";
 
 function Navbar() {
   return (
-    <nav className="py-4 border-b border-gray-900 relative">
+    <nav className="py-4 bg-gray-950 border-b border-gray-900 sticky top-0">
       <div className="container-center flex justify-between">
         {/* logo */}
         <div>

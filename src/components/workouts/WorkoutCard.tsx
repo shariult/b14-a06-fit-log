@@ -22,8 +22,8 @@ function WorkoutCard({ className, ...props }: WorkoutCardProps) {
         {/* image */}
         <div className="rounded-t-xl overflow-hidden">
           <Image
-            src="https://img.magnific.com/free-photo/portrait-anime-character-doing-fitness-exercising_23-2151666664.jpg?w=740"
-            alt="workout image"
+            src={props.workout.image}
+            alt={props.workout.name}
             width={392}
             height={192}
             className="w-full"
@@ -33,29 +33,30 @@ function WorkoutCard({ className, ...props }: WorkoutCardProps) {
         {/* content-box */}
         <div className="p-6 flex flex-col gap-6">
           <div className="flex gap-3">
-            <Tag>Shoulder</Tag>
-            <Tag>Arms</Tag>
+            {props.workout.muscleGroups.map((item, idx) => (
+              <Tag key={idx}>{item}</Tag>
+            ))}
           </div>
 
           <div>
             <h3 className="text-xl font-bold uppercase font-oswald">
-              BARBELL BENCH PRESS
+              {props.workout.name}
             </h3>
-            <p className="text-gray-500 text-sm">Barbell</p>
+            <p className="text-gray-500 text-sm">{props.workout.equipment}</p>
           </div>
 
           <div className="flex gap-5 border-t border-t-gray-800 pt-4">
             <TextWithIcon
               iconEl={<IconClock className="w-4 h-4" />}
-              label="12 min"
+              label={`${props.workout.duration} min`}
             />
             <TextWithIcon
               iconEl={<IconCalorie className="w-4 h-4" />}
-              label="450 kcal"
+              label={`${props.workout.caloriesBurned} kcal`}
             />
             <TextWithIcon
               iconEl={<IconRating className="w-4 h-4" />}
-              label="4.9"
+              label={`${props.workout.rating}`}
             />
           </div>
         </div>
