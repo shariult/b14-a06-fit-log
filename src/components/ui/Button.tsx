@@ -27,10 +27,10 @@ function Button(props: ButtonProps) {
     classes += " bg-pr hover:bg-gray-100 text-pd rounded-full";
   } else if (variant === "border") {
     classes +=
-      " bg-transparent hover:bg-gray-100 border border-gray-500 rounded-lg";
+      " bg-transparent hover:bg-gray-100 hover:text-gray-900 border border-gray-500 rounded-lg";
   } else {
     classes +=
-      " bg-transparent hover:bg-gray-100 border border-gray-500 rounded-full";
+      " bg-transparent hover:bg-gray-100 hover:text-gray-900 border border-gray-500 rounded-full";
   }
 
   if (className) {

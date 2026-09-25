@@ -1,4 +1,5 @@
 import React from "react";
+import SectionWorkoutDetails from "@/components/layout/workout-show/SectionWorkout";
 
 type WorkoutShowProps = {
   children: React.ReactNode;
@@ -9,7 +10,11 @@ async function WorkoutShow(props: WorkoutShowProps) {
   const { wId } = await props.params;
   console.log(wId);
 
-  return <div>WorkoutShow</div>;
+  return (
+    <>
+      <SectionWorkoutDetails />
+    </>
+  );
 }
 
 export default WorkoutShow;

@@ -8,11 +8,17 @@ import TextWithIcon from "@/components/ui/TextWithIcon";
 import IconClock from "@/components/icons/IconClock";
 import IconCalorie from "@/components/icons/IconCalorie";
 import IconRating from "@/components/icons/IconRating";
+import { type Workout } from "@/types";
 
-function WorkoutCard() {
+type WorkoutCardProps = {
+  workout: Workout;
+  className?: string;
+};
+
+function WorkoutCard({ className, ...props }: WorkoutCardProps) {
   return (
-    <div className="bg-gray-900/80 rounded-xl">
-      <Link href="#">
+    <div className={`bg-gray-900/80 rounded-xl ${className}`}>
+      <Link href={`workouts/${props.workout.id}`}>
         {/* image */}
         <div className="rounded-t-xl overflow-hidden">
           <Image

@@ -1,4 +1,4 @@
-import WorkoutCard from "@/components/ui/workouts/WorkoutCard";
+import WorkoutCard from "@/components/workouts/WorkoutCard";
 import React, { ComponentPropsWithoutRef } from "react";
 
 type SectionWorkoutProps = {
@@ -12,19 +12,17 @@ function SectionWorkout(props: SectionWorkoutProps) {
     <section {...otherProps}>
       <div className={`container-center ${className}`}>
         {/* title part */}
-        <h2 className="mb-1 text-2xl md:text-4xl font-black font-oswald uppercase">
-          The Library
-        </h2>
-        <p className="text-gray-500 text-sm md:text-base mb-12">
+        <h2 className="heading-2">The Library</h2>
+        <p className="heading-2-sub mb-12">
           Twelve lifts covering every major muscle group.
         </p>
 
         {/* workout-grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* <WorkoutCard />
           <WorkoutCard />
           <WorkoutCard />
-          <WorkoutCard />
-          <WorkoutCard />
+          <WorkoutCard /> */}
         </div>
       </div>
     </section>

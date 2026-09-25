@@ -1,4 +1,4 @@
-export type Exercise = {
+export type Workout = {
   id: number;
   name: string;
   image: string;
