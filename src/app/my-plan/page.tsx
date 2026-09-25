@@ -44,7 +44,7 @@ function MyPlanIndex() {
       <div className="container-center py-12 flex flex-col gap-6">
         <header>
           <h2 className="heading-2">My Plan</h2>
-          <p className="helper-text">
+          <p className="subtitle">
             Cap of five lifts for today. Finish them, then load more.
           </p>
         </header>

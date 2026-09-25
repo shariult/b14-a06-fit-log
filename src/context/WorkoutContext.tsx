@@ -2,6 +2,7 @@
 
 import React, { createContext, useState } from "react";
 import { type Workout } from "@/types";
+import { toast } from "react-toastify";
 
 type WorkoutContextT = {
   plans: Workout[];
@@ -26,7 +27,18 @@ function WorkoutProvider({ children }: { children: React.ReactNode }) {
   const [saved, setSaved] = useState<Workout[]>([]);
 
   function addPlan(workout: Workout) {
-    setPlans([...plans, workout]);
+    if (plans.length >= 5) {
+      toast.error("Today's plan is full!");
+      return;
+    }
+
+    const doesExist = plans.find((item) => item.id === workout.id);
+    if (!doesExist) {
+      setPlans([...plans, workout]);
+      toast.success("Workout added to Today's plan!");
+    } else {
+      toast.error("Workout already exists!");
+    }
   }
   function removePlan(wId: number) {
     const updatedData = plans.filter((item) => item.id !== wId);
@@ -34,7 +46,18 @@ function WorkoutProvider({ children }: { children: React.ReactNode }) {
   }
 
   function addSaved(workout: Workout) {
-    setSaved([...saved, workout]);
+    if (saved.length >= 5) {
+      toast.error("Today's plan is full!");
+      return;
+    }
+
+    const doesExist = saved.find((item) => item.id === workout.id);
+    if (!doesExist) {
+      setSaved([...saved, workout]);
+      toast.success("Workout saved for later!");
+    } else {
+      toast.error("Workout already exists!");
+    }
   }
   function removeSaved(wId: number) {
     const updatedData = saved.filter((item) => item.id !== wId);

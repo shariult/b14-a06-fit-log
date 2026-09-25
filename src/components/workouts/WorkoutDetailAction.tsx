@@ -24,9 +24,10 @@ function WorkoutDetailAction(props: WorkoutDetailActionProps) {
     <div className="flex flex-wrap gap-4">
       <Button
         el="btn"
-        variant="primary"
+        variant={`${workoutData.plans.length >= 5 ? "disabled" : "primary"}`}
         size="md"
         onClick={() => planHandler()}
+        disabled={workoutData.plans.length >= 5}
       >
         <div className="flex justify-center items-center gap-2">
           <IconCalendar />
@@ -35,9 +36,10 @@ function WorkoutDetailAction(props: WorkoutDetailActionProps) {
       </Button>
       <Button
         el="btn"
-        variant="border"
+        variant={`${workoutData.saved.length >= 5 ? "disabled" : "border"}`}
         size="md"
         onClick={() => savedHandler()}
+        disabled={workoutData.saved.length >= 5}
       >
         <div className="flex justify-center items-center gap-2">
           <IconBookmark />

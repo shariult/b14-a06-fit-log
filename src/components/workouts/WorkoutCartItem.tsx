@@ -13,6 +13,7 @@ import {
 import Button from "@/components/ui/Button";
 import { Workout } from "@/types";
 import { WorkoutContext } from "@/context/WorkoutContext";
+import { toast } from "react-toastify";
 
 type WorkoutCartItemProps = {
   workout: Workout;
@@ -24,10 +25,17 @@ function WorkoutCartItem(props: WorkoutCartItemProps) {
   function handleRemove() {
     if (props.activeTab === "plans") {
       removePlan(props.workout.id);
+      toast.success("Workout removed from Today's plan!");
     }
     if (props.activeTab === "saved") {
       removeSaved(props.workout.id);
+      toast.success("Workout removed from Saved!");
     }
+  }
+
+  function handleMarkDone() {
+    removePlan(props.workout.id);
+    toast.success("Workout marked as done!");
   }
   return (
     <div className="flex flex-col lg:flex-row justify-between items-center bg-gray-800/80 p-4 rounded-xl gap-4">
@@ -74,7 +82,12 @@ function WorkoutCartItem(props: WorkoutCartItemProps) {
         </Button>
 
         {props.activeTab === "plans" && (
-          <Button el="btn" variant="primary-rounded" size="sm">
+          <Button
+            el="btn"
+            variant="primary-rounded"
+            size="sm"
+            onClick={() => handleMarkDone()}
+          >
             <div className="flex gap-2">
               <IconOk />
               <span>Mark as Done</span>

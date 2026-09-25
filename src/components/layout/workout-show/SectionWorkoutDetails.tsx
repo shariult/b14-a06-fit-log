@@ -30,7 +30,7 @@ function SectionWorkoutDetails(props: SectionWorkoutDetailsProps) {
         <div className="flex flex-col gap-6">
           <div>
             <h2 className="heading-2">{props.workout.name}</h2>
-            <p className="helper-text">{props.workout.description}</p>
+            <p className="subtitle">{props.workout.description}</p>
           </div>
 
           <div className="flex gap-4">

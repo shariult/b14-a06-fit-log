@@ -12,7 +12,7 @@ type NavStatProps = {
 
 function NavStat(props: NavStatProps) {
   const { href, label, isActive = false, className, ...otherProps } = props;
-  let classes = `text-xs ${isActive ? "text-gray-300" : "text-gray-400"} flex gap-2 items-center hover:bg-gray-900/80 px-4 py-2 rounded ${className}`;
+  let classes = `text-xs ${isActive ? "text-gray-300" : "text-gray-400"} flex gap-2 items-center hover:bg-gray-900/80 px-4 py-2 rounded-lg ${className}`;
 
   const workoutData = useContext(WorkoutContext);
 

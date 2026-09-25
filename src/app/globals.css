@@ -13,9 +13,9 @@
     @apply container mx-auto px-6;
   }
   .heading-2 {
-    @apply mb-1 text-2xl md:text-4xl font-black font-oswald uppercase;
+    @apply mb-1 text-2xl md:text-4xl font-bold font-oswald uppercase;
   }
-  .helper-text {
+  .subtitle {
     @apply text-gray-500 text-sm md:text-base;
   }
   .specification-item {

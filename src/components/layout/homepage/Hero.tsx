@@ -28,7 +28,7 @@ function Hero(props: HeroProps) {
           <Button
             el="link"
             variant="primary"
-            href="#workout-grid"
+            href="#library"
             className="uppercase"
           >
             Browser Workouts

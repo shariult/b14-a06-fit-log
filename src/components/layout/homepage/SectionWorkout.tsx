@@ -11,11 +11,11 @@ async function SectionWorkout(props: SectionWorkoutProps) {
 
   const workoutArr = await getWorkouts();
   return (
-    <section id="workout-grid" {...otherProps}>
+    <section id="library" {...otherProps}>
       <div className={`container-center ${className}`}>
         {/* title part */}
         <h2 className="heading-2">The Library</h2>
-        <p className="helper-text mb-12">
+        <p className="subtitle mb-12">
           Twelve lifts covering every major muscle group.
         </p>
 

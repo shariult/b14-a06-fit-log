@@ -10,7 +10,12 @@ type ButtonElProps = {
 } & ComponentPropsWithoutRef<"button">;
 
 type ButtonProps = {
-  variant: "primary" | "primary-rounded" | "border" | "border-rounded";
+  variant:
+    | "primary"
+    | "primary-rounded"
+    | "border"
+    | "border-rounded"
+    | "disabled";
   children: React.ReactNode;
   size?: "lg" | "md" | "sm";
   className?: string;
@@ -19,7 +24,7 @@ type ButtonProps = {
 function Button(props: ButtonProps) {
   const { el, variant, size = "lg", className } = props;
 
-  let classes = "inline-block text-xs font-bold cursor-pointer transition-all";
+  let classes = "inline-block text-xs font-bold transition-all";
 
   if (size === "lg") {
     classes += " px-8 py-4";
@@ -30,25 +35,23 @@ function Button(props: ButtonProps) {
   }
 
   if (variant === "primary") {
-    classes += " bg-pr hover:bg-gray-100 text-pd rounded-lg";
+    classes += " bg-pr hover:bg-gray-100 text-pd rounded-lg cursor-pointer";
   } else if (variant === "primary-rounded") {
-    classes += " bg-pr hover:bg-gray-100 text-pd rounded-full";
+    classes += " bg-pr hover:bg-gray-100 text-pd rounded-full cursor-pointer";
   } else if (variant === "border") {
     classes +=
-      " bg-transparent hover:bg-gray-100 hover:text-gray-900 border border-gray-500 rounded-lg";
+      " bg-transparent hover:bg-gray-100 hover:text-gray-900 border border-gray-500 rounded-lg cursor-pointer";
+  } else if (variant === "disabled") {
+    classes += " bg-gray-500 rounded-xl cursor-not-allowed";
   } else {
     classes +=
-      " bg-transparent hover:bg-gray-100 hover:text-gray-900 border border-gray-500 rounded-full";
-  }
-
-  if (className) {
-    classes = `${classes} ${className}`;
+      " bg-transparent hover:bg-gray-100 hover:text-gray-900 border border-gray-500 rounded-full cursor-pointer";
   }
 
   if (el === "link") {
     const { href, children, ...otherProps } = props;
     return (
-      <Link href={href} {...otherProps} className={`${classes}`}>
+      <Link href={href} {...otherProps} className={`${classes} ${className}`}>
         {children}
       </Link>
     );
