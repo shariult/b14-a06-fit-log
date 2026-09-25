@@ -22,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${oswald.className} ${inter.className}`}>
       <body className="bg-gray-950 text-gray-50">
         <Navbar />
-        <main>{children}</main>
+        <main className="min-h-[80vh]">{children}</main>
         <Footer />
       </body>
     </html>

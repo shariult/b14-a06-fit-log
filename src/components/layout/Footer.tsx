@@ -3,8 +3,8 @@ import { IconFooterLogo } from "@/components/ui/Icons";
 
 function Footer() {
   return (
-    <footer className="bg-gray-900">
-      <div className="container-center flex justify-between py-6 border-t border-t-gray-800">
+    <footer className="border-t border-t-gray-800">
+      <div className="container-center flex justify-between py-6">
         <div className="flex justify-center items-center gap-2 tracking-wider">
           <IconFooterLogo className="text-pr" />
           <span className="text-sm uppercase font-black">FitLog</span>
