@@ -1,21 +1,34 @@
-import React from "react";
+"use client";
+
+import React, { useContext } from "react";
 import Image from "next/image";
-import TextWithIcon from "../ui/TextWithIcon";
+import TextWithIcon from "@/components/ui/TextWithIcon";
 import {
   IconCalorie,
   IconClock,
   IconOk,
   IconRating,
   IconXMark,
-} from "../ui/Icons";
-import Button from "../ui/Button";
+} from "@/components/ui/Icons";
+import Button from "@/components/ui/Button";
 import { Workout } from "@/types";
+import { WorkoutContext } from "@/context/WorkoutContext";
 
 type WorkoutCartItemProps = {
   workout: Workout;
+  activeTab: "plans" | "saved";
 };
 
 function WorkoutCartItem(props: WorkoutCartItemProps) {
+  const { removePlan, removeSaved } = useContext(WorkoutContext);
+  function handleRemove() {
+    if (props.activeTab === "plans") {
+      removePlan(props.workout.id);
+    }
+    if (props.activeTab === "saved") {
+      removeSaved(props.workout.id);
+    }
+  }
   return (
     <div className="flex flex-col lg:flex-row justify-between items-center bg-gray-800/80 p-4 rounded-xl gap-4">
       <Image
@@ -51,16 +64,28 @@ function WorkoutCartItem(props: WorkoutCartItemProps) {
 
       {/* actions */}
       <div className="flex gap-2 pr-6">
-        <Button el="btn" variant="border-rounded" size="sm">
+        <Button
+          el="link"
+          variant="border-rounded"
+          size="sm"
+          href={`/workouts/${props.workout.id}`}
+        >
           View Details
         </Button>
-        <Button el="btn" variant="primary-rounded" size="sm">
-          <div className="flex gap-2">
-            <IconOk />
-            <span>Mark as Done</span>
-          </div>
-        </Button>
-        <button className="group flex justify-center items-center cursor-pointer hover:bg-red-400 w-8 h-8 rounded transition">
+
+        {props.activeTab === "plans" && (
+          <Button el="btn" variant="primary-rounded" size="sm">
+            <div className="flex gap-2">
+              <IconOk />
+              <span>Mark as Done</span>
+            </div>
+          </Button>
+        )}
+
+        <button
+          className="group flex justify-center items-center cursor-pointer hover:bg-red-400 w-8 h-8 rounded transition"
+          onClick={() => handleRemove()}
+        >
           <IconXMark className="w-6 h-6 text-gray-500 group-hover:text-pd" />
         </button>
       </div>

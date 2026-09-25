@@ -61,7 +61,11 @@ function SectionWorkoutCart(props: SectionStatProps) {
       {props.workoutArr.length > 0 && (
         <div className="flex flex-col gap-6">
           {props.workoutArr.map((item) => (
-            <WorkoutCartItem key={item.id} workout={item} />
+            <WorkoutCartItem
+              key={item.id}
+              workout={item}
+              activeTab={props.activeTab}
+            />
           ))}
         </div>
       )}
