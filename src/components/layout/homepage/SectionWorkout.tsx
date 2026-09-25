@@ -11,7 +11,7 @@ async function SectionWorkout(props: SectionWorkoutProps) {
 
   const workoutArr = await getWorkouts();
   return (
-    <section {...otherProps}>
+    <section id="workout-grid" {...otherProps}>
       <div className={`container-center ${className}`}>
         {/* title part */}
         <h2 className="heading-2">The Library</h2>

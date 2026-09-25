@@ -25,7 +25,12 @@ function Hero(props: HeroProps) {
             FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
             into today&apos;s plan, and watch the week&apos;s work add up.
           </p>
-          <Button el="link" variant="primary" href="#" className="uppercase">
+          <Button
+            el="link"
+            variant="primary"
+            href="#workout-grid"
+            className="uppercase"
+          >
             Browser Workouts
           </Button>
         </div>

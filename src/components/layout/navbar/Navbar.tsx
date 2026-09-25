@@ -27,7 +27,7 @@ function Navbar() {
           <NavStat stat={0} isActive>
             Plan
           </NavStat>
-          <NavStat stat={1}>Stat</NavStat>
+          <NavStat stat={1}>Saved</NavStat>
         </div>
 
         {/* Hamburger */}
