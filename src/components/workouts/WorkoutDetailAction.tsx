@@ -19,16 +19,26 @@ function WorkoutDetailAction(props: WorkoutDetailActionProps) {
   function savedHandler() {
     workoutData.addSaved(props.workout);
   }
-  console.log(workoutData.plans);
+
   return (
     <div className="flex flex-wrap gap-4">
-      <Button el="btn" variant="primary" onClick={() => planHandler()}>
+      <Button
+        el="btn"
+        variant="primary"
+        size="md"
+        onClick={() => planHandler()}
+      >
         <div className="flex justify-center items-center gap-2">
           <IconCalendar />
           <span className="text-sm">Add to today&apos;s plan</span>
         </div>
       </Button>
-      <Button el="btn" variant="border" onClick={() => savedHandler()}>
+      <Button
+        el="btn"
+        variant="border"
+        size="md"
+        onClick={() => savedHandler()}
+      >
         <div className="flex justify-center items-center gap-2">
           <IconBookmark />
           <span className="text-sm">Save for later</span>

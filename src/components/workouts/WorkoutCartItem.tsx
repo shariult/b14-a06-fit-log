@@ -9,12 +9,17 @@ import {
   IconXMark,
 } from "../ui/Icons";
 import Button from "../ui/Button";
+import { Workout } from "@/types";
 
-function WorkoutCartItem() {
+type WorkoutCartItemProps = {
+  workout: Workout;
+};
+
+function WorkoutCartItem(props: WorkoutCartItemProps) {
   return (
     <div className="flex flex-col lg:flex-row justify-between items-center bg-gray-800/80 p-4 rounded-xl gap-4">
       <Image
-        src="https://img.magnific.com/free-photo/portrait-anime-character-doing-fitness-exercising_23-2151666664.jpg?w=740"
+        src={props.workout.image}
         alt="card image"
         width={256}
         height={256}
@@ -23,21 +28,23 @@ function WorkoutCartItem() {
 
       {/* content */}
       <div className="lg:mr-auto text-center lg:text-left">
-        <h3 className="font-bold font-oswald text-xl mb-2">RUSSIAN TWIST</h3>
-        <p className="text-gray-500 text-sm">Medicine Ball</p>
+        <h3 className="font-bold font-oswald text-xl mb-2">
+          {props.workout.name}
+        </h3>
+        <p className="text-gray-500 text-sm">{props.workout.equipment}</p>
 
         <div className="flex gap-5 pt-4 text-xs">
           <TextWithIcon
             iconEl={<IconClock className="w-4 h-4 text-pr" />}
-            label="12 min"
+            label={`${props.workout.duration} min`}
           />
           <TextWithIcon
             iconEl={<IconCalorie className="w-4 h-4 text-pr" />}
-            label="450 kcal"
+            label={`${props.workout.caloriesBurned} kcal`}
           />
           <TextWithIcon
             iconEl={<IconRating className="w-4 h-4 text-pr" />}
-            label="4.9"
+            label={`${props.workout.rating}`}
           />
         </div>
       </div>
