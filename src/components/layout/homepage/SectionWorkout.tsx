@@ -13,7 +13,7 @@ function SectionWorkout(props: SectionWorkoutProps) {
       <div className={`container-center ${className}`}>
         {/* title part */}
         <h2 className="heading-2">The Library</h2>
-        <p className="heading-2-sub mb-12">
+        <p className="helper-text mb-12">
           Twelve lifts covering every major muscle group.
         </p>
 

@@ -26,7 +26,7 @@ function SectionWorkoutDetails() {
         <div className="flex flex-col gap-6">
           <div>
             <h2 className="heading-2">BARBELL BENCH PRESS</h2>
-            <p className="heading-2-sub">
+            <p className="helper-text">
               A compound press that builds chest thickness, triceps, and
               pressing power from a stable bench.
             </p>

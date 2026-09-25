@@ -15,7 +15,7 @@
   .heading-2 {
     @apply mb-1 text-2xl md:text-4xl font-black font-oswald uppercase;
   }
-  .heading-2-sub {
+  .helper-text {
     @apply text-gray-500 text-sm md:text-base;
   }
   .specification-item {

@@ -9,7 +9,7 @@ function MyPlanIndex() {
         {/* header */}
         <header>
           <h2 className="heading-2">My Plan</h2>
-          <p className="heading-2-sub">
+          <p className="helper-text">
             Cap of five lifts for today. Finish them, then load more.
           </p>
         </header>
