@@ -4,10 +4,11 @@ type WorkoutStatProps = {
   label: string;
   stat: number;
   className?: string;
+  isPrimary?: boolean;
 } & ComponentPropsWithoutRef<"div">;
 
 function WorkoutStat(props: WorkoutStatProps) {
-  const { label, stat, className, ...otherProps } = props;
+  const { label, stat, isPrimary = false, className, ...otherProps } = props;
 
   return (
     <div
@@ -15,7 +16,11 @@ function WorkoutStat(props: WorkoutStatProps) {
       {...otherProps}
     >
       <span className="text-xs text-gray-500 capitalize">{label}</span>
-      <span className="text-3xl font-bold font-oswald">{stat}</span>
+      <span
+        className={`text-3xl font-bold font-oswald ${isPrimary ? "text-pr" : ""}`}
+      >
+        {stat}
+      </span>
     </div>
   );
 }

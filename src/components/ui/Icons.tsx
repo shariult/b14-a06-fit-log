@@ -191,3 +191,53 @@ export function IconRating({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function IconOk({
+  className,
+  ...props
+}: React.SVGProps<SVGSVGElement> & { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
+      fill="none"
+      className={className}
+      {...props}
+    >
+      <path
+        d="M2.9165 7.58334L5.24984 9.91668L11.0832 4.08334"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function IconXMark({
+  className,
+  ...props
+}: React.SVGProps<SVGSVGElement> & { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      className={className}
+      {...props}
+    >
+      <path
+        d="M4 12L12 4M4 4L12 12"
+        stroke="currentColor"
+        strokeWidth="1.33333"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}

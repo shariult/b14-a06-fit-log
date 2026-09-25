@@ -38,7 +38,9 @@ function WorkoutCard({ className, ...props }: WorkoutCardProps) {
           </div>
 
           <div>
-            <h3 className="text-xl font-bold uppercase">BARBELL BENCH PRESS</h3>
+            <h3 className="text-xl font-bold uppercase font-oswald">
+              BARBELL BENCH PRESS
+            </h3>
             <p className="text-gray-500 text-sm">Barbell</p>
           </div>
 

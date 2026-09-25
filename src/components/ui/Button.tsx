@@ -12,14 +12,22 @@ type ButtonElProps = {
 type ButtonProps = {
   variant: "primary" | "primary-rounded" | "border" | "border-rounded";
   children: React.ReactNode;
+  size?: "lg" | "md" | "sm";
   className?: string;
 } & (LinkElProps | ButtonElProps);
 
 function Button(props: ButtonProps) {
-  const { el, variant, className } = props;
+  const { el, variant, size = "lg", className } = props;
 
-  let classes =
-    "inline-block px-8 py-4 text-xs font-bold cursor-pointer transition-all";
+  let classes = "inline-block text-xs font-bold cursor-pointer transition-all";
+
+  if (size === "lg") {
+    classes += " px-8 py-4";
+  } else if (size === "sm") {
+    classes += " px-4 py-2";
+  } else {
+    classes += " px-6 py-3";
+  }
 
   if (variant === "primary") {
     classes += " bg-pr hover:bg-gray-100 text-pd rounded-lg";
