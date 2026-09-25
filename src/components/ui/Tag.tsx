@@ -9,7 +9,7 @@ function Tag(props: TagProps) {
   const { children, className, ...otherProps } = props;
 
   let classes =
-    "bg-pr text-pd text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full";
+    "bg-pr text-pd text-[10px] font-bold uppercase tracking-wider px-4 py-2 rounded-full";
   if (className) {
     classes = `${classes} ${className}`;
   }

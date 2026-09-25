@@ -1,5 +1,5 @@
 import React from "react";
-import SectionWorkoutDetails from "@/components/layout/workout-show/SectionWorkout";
+import SectionWorkoutDetails from "@/components/layout/workout-show/SectionWorkoutDetails";
 
 type WorkoutShowProps = {
   children: React.ReactNode;

@@ -10,7 +10,7 @@ import { IconCalendar } from "@/components/ui/Icons";
 function SectionWorkoutDetails() {
   return (
     <section>
-      <div className="container-center py-12 flex flex-col md:flex-row gap-8 mb:gap-14">
+      <div className="container-center py-12 grid grid-cols-1 lg:grid-cols-2 gap-8 mb:gap-14">
         {/* left */}
         <div className="overflow-hidden">
           <Image
