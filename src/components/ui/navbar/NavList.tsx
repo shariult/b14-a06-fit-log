@@ -1,8 +1,8 @@
 "use client";
 
 import React, { ComponentPropsWithoutRef, useState } from "react";
-import NavLink from "@/components/navbar/NavLink";
-import IconMenu from "../icons/IconMenu";
+import NavLink from "@/components/ui/navbar/NavLink";
+import IconMenu from "@/components/icons/IconMenu";
 
 type NavListProps = {
   className?: string;

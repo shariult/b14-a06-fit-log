@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+
 import Tag from "@/components/ui/Tag";
 import TextWithIcon from "@/components/ui/TextWithIcon";
 
-import Link from "next/link";
 import IconClock from "@/components/icons/IconClock";
 import IconCalorie from "@/components/icons/IconCalorie";
 import IconRating from "@/components/icons/IconRating";
