@@ -1,7 +1,8 @@
 "use client";
 
 import React, { ComponentPropsWithoutRef, useState } from "react";
-import NavLink from "./NavLink";
+import NavLink from "@/components/navbar/NavLink";
+import IconMenu from "../icons/IconMenu";
 
 type NavListProps = {
   className?: string;
@@ -25,19 +26,7 @@ function NavList(props: NavListProps) {
   return (
     <div className={classes} {...otherProps} onClick={() => navToggleHandler()}>
       <p className="p-1 ml-4 border border-gray-500 rounded hover:bg-pr hover:text-pd cursor-pointer md:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="currentColor"
-          className="bi bi-list"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-          />
-        </svg>
+        <IconMenu className="w-6 h-6" />
       </p>
 
       <ul

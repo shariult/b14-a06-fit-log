@@ -13,7 +13,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Fit Log | Train with Intent",
-  description: "TRAIN WITH INTENT. LOG EVERY SET.",
+  description: "Train with intent. Log every set.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

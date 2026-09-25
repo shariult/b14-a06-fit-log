@@ -12,7 +12,7 @@ function Hero(props: HeroProps) {
 
   return (
     <header className={`container-center ${className}`} {...otherProps}>
-      <div className="bg-gray-900/80 rounded-xl px-6 py-14 md:px-14 md:py-14 flex flex-col items-center md:flex-row gap-12 md:gap-4">
+      <div className="bg-gray-900/80 rounded-xl px-6 py-14 md:px-14 md:py-14 flex flex-col items-center md:flex-row md:justify-between gap-12 md:gap-4">
         {/* left side */}
         <div className="flex flex-col items-center md:items-start text-center md:text-start gap-5">
           <p className="text-xs text-pr font-medium tracking-wider uppercase">
