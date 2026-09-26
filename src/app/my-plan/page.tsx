@@ -31,13 +31,13 @@ function MyPlanIndex() {
     setSortOption(sortOption);
   }
   if (sortOption === "duration") {
-    [...data].sort((a, b) => a.duration - b.duration);
+    data = [...data].sort((a, b) => a.duration - b.duration);
   }
   if (sortOption === "calories") {
-    [...data].sort((a, b) => a.caloriesBurned - b.caloriesBurned);
+    data = [...data].sort((a, b) => a.caloriesBurned - b.caloriesBurned);
   }
   if (sortOption === "rating") {
-    [...data].sort((a, b) => b.rating - a.rating);
+    data = [...data].sort((a, b) => b.rating - a.rating);
   }
 
   return (
