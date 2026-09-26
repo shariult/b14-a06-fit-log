@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, Suspense } from "react";
 import SectionStat from "@/components/layout/my-plan/SectionStat";
 import SectionWorkoutCart from "@/components/layout/my-plan/SectionWorkoutCart";
 import { WorkoutContext } from "@/context/WorkoutContext";
 import { Workout } from "@/types";
+import Loading from "@/components/ui/Loading";
 
 type SortOptions = "duration" | "calories" | "rating";
 
@@ -51,13 +52,17 @@ function MyPlanIndex() {
 
         <SectionStat workoutArr={data} />
 
-        <SectionWorkoutCart
-          workoutArr={data}
-          activeTab={activeTab}
-          sortOption={sortOption}
-          onSortChange={onSortChange}
-          onToggleTab={onToggleTab}
-        />
+        {workoutData.isLoading && <Loading />}
+
+        {!workoutData.isLoading && (
+          <SectionWorkoutCart
+            workoutArr={data}
+            activeTab={activeTab}
+            sortOption={sortOption}
+            onSortChange={onSortChange}
+            onToggleTab={onToggleTab}
+          />
+        )}
       </div>
     </>
   );

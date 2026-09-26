@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 type WorkoutContextT = {
   plans: Workout[];
   saved: Workout[];
+  isLoading: boolean;
   addPlan: (workout: Workout) => void;
   removePlan: (wId: number) => void;
   addSaved: (workout: Workout) => void;
@@ -16,6 +17,7 @@ type WorkoutContextT = {
 export const WorkoutContext = createContext<WorkoutContextT>({
   plans: [],
   saved: [],
+  isLoading: false,
   addPlan: function () {},
   removePlan: function () {},
   addSaved: function () {},
@@ -25,17 +27,20 @@ export const WorkoutContext = createContext<WorkoutContextT>({
 function WorkoutProvider({ children }: { children: React.ReactNode }) {
   const [plans, setPlans] = useState<Workout[]>([]);
   const [saved, setSaved] = useState<Workout[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  useEffect(function () {
-    const localPlans = localStorage.getItem("plans");
-    const localSaved = localStorage.getItem("saved");
+  useEffect(() => {
+    try {
+      const localPlans = localStorage.getItem("plans");
+      const localSaved = localStorage.getItem("saved");
 
-    if (localPlans) {
       // eslint-disable-next-line
-      setPlans(JSON.parse(localPlans));
-    }
-    if (localSaved) {
-      setSaved(JSON.parse(localSaved));
+      if (localPlans) setPlans(JSON.parse(localPlans));
+      if (localSaved) setSaved(JSON.parse(localSaved));
+    } catch (error) {
+      console.error("Failed to parse workouts from localStorage", error);
+    } finally {
+      setIsLoading(false);
     }
   }, []);
 
@@ -51,7 +56,7 @@ function WorkoutProvider({ children }: { children: React.ReactNode }) {
       setPlans(updatedData);
 
       localStorage.setItem("plans", JSON.stringify(updatedData));
-      toast.success("Workout added to Today's plan!");
+      toast.success("Added to today's plan!");
     } else {
       toast.error("Workout already exists!");
     }
@@ -89,6 +94,7 @@ function WorkoutProvider({ children }: { children: React.ReactNode }) {
   const data = {
     plans,
     saved,
+    isLoading,
     addPlan,
     removePlan,
     addSaved,
