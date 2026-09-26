@@ -12,7 +12,7 @@ function WorkoutStat(props: WorkoutStatProps) {
 
   return (
     <div
-      className={`flex flex-col gap-2 not-last:border-r not-last:border-r-gray-700 grow px-6 ${className}`}
+      className={`flex flex-col gap-2 not-last:border-b md:not-last:border-b-0 md:not-last:border-r not-last:border-b-gray-700 md:not-last:border-r-gray-700 grow p-6 ${className}`}
       {...otherProps}
     >
       <span className="text-xs text-gray-500 capitalize">{label}</span>

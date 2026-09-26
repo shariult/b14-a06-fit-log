@@ -18,18 +18,18 @@ function SectionWorkoutCart(props: SectionStatProps) {
 
   return (
     <section className="py-12 flex flex-col gap-6">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col md:flex-row gap-4 mb-4 md:justify-between md:items-center">
         {/******* filter *******/}
         <div className="flex bg-gray-900/80 p-1 rounded-xl text-gray-500">
           <button
-            className={`px-4 py-1.5 rounded-lg text-xs cursor-pointer ${props.activeTab === "plans" ? activeClasses : ""}`}
+            className={`grow md:grow-0 px-4 py-1.5 rounded-lg text-xs cursor-pointer ${props.activeTab === "plans" ? activeClasses : ""}`}
             onClick={() => props.onToggleTab("plans")}
           >
             Today&apos;s Plan
           </button>
 
           <button
-            className={`px-4 py-1.5 rounded-lg text-xs cursor-pointer ${props.activeTab === "saved" ? activeClasses : ""}`}
+            className={`grow md:grow-0 px-4 py-1.5 rounded-lg text-xs cursor-pointer ${props.activeTab === "saved" ? activeClasses : ""}`}
             onClick={() => props.onToggleTab("saved")}
           >
             Saved
@@ -47,7 +47,7 @@ function SectionWorkoutCart(props: SectionStatProps) {
           <select
             name="sort"
             id="sort"
-            className="px-3 py-2 border border-gray-700 rounded-xl text-sm bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-gray-600"
+            className="grow md:grow-0 px-3 py-2 border border-gray-700 rounded-xl text-sm bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-gray-600"
             onChange={(e) => props.onSortChange(e.target.value as SortOptions)}
             value={props.sortOption}
           >

@@ -17,7 +17,9 @@ type WorkoutCardProps = {
 
 function WorkoutCard({ className, ...props }: WorkoutCardProps) {
   return (
-    <div className={`bg-gray-900/80 rounded-xl ${className}`}>
+    <div
+      className={`bg-gray-900/80 rounded-xl hover:border hover:border-pr ${className}`}
+    >
       <Link href={`workouts/${props.workout.id}`}>
         {/* image */}
         <div className="rounded-t-xl overflow-hidden">

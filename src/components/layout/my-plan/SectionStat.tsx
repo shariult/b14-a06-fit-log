@@ -23,7 +23,7 @@ function SectionStat(props: SectionStatProps) {
       },
     );
   return (
-    <section className="flex p-6 rounded-xl bg-gray-900/80">
+    <section className="flex flex-col gap-4 md:flex-row p-6 rounded-xl bg-gray-900/80">
       <WorkoutStat label="Exercises" stat={totalExercise} isPrimary={true} />
       <WorkoutStat label="Minutes" stat={totalMinutes} />
       <WorkoutStat label="Calories" stat={totalCalories} />
