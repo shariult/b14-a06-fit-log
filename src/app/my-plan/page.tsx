@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext, useState, Suspense } from "react";
+import React, { useContext, useState } from "react";
 import SectionStat from "@/components/layout/my-plan/SectionStat";
 import SectionWorkoutCart from "@/components/layout/my-plan/SectionWorkoutCart";
 import { WorkoutContext } from "@/context/WorkoutContext";
@@ -31,13 +31,13 @@ function MyPlanIndex() {
     setSortOption(sortOption);
   }
   if (sortOption === "duration") {
-    data.sort((a, b) => a.duration - b.duration);
+    [...data].sort((a, b) => a.duration - b.duration);
   }
   if (sortOption === "calories") {
-    data.sort((a, b) => a.caloriesBurned - b.caloriesBurned);
+    [...data].sort((a, b) => a.caloriesBurned - b.caloriesBurned);
   }
   if (sortOption === "rating") {
-    data.sort((a, b) => b.rating - a.rating);
+    [...data].sort((a, b) => b.rating - a.rating);
   }
 
   return (
@@ -52,7 +52,7 @@ function MyPlanIndex() {
 
         <SectionStat workoutArr={data} />
 
-        {workoutData.isLoading && <Loading />}
+        {workoutData.isLoading && <Loading loadingText="Loading workouts..." />}
 
         {!workoutData.isLoading && (
           <SectionWorkoutCart

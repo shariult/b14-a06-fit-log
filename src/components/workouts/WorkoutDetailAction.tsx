@@ -36,10 +36,11 @@ function WorkoutDetailAction(props: WorkoutDetailActionProps) {
       </Button>
       <Button
         el="btn"
-        variant={`${workoutData.saved.length >= 5 ? "disabled" : "border"}`}
+        // variant={`${workoutData.saved.length >= 5 ? "disabled" : "border"}`}
+        variant="border"
         size="md"
         onClick={() => savedHandler()}
-        disabled={workoutData.saved.length >= 5}
+        // disabled={workoutData.saved.length >= 5}
       >
         <div className="flex justify-center items-center gap-2">
           <IconBookmark />

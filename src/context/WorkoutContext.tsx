@@ -69,10 +69,10 @@ function WorkoutProvider({ children }: { children: React.ReactNode }) {
   }
 
   function addSaved(workout: Workout) {
-    if (saved.length >= 5) {
-      toast.error("Today's plan is full!");
-      return;
-    }
+    // if (saved.length >= 5) {
+    //   toast.error("Today's plan is full!");
+    //   return;
+    // }
 
     const doesExist = saved.find((item) => item.id === workout.id);
     if (!doesExist) {
